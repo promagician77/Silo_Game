@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Kalam:wght@400;700&display=swap");
+
+body {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.landing-background {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  background-image: url("titlePageV2.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.landing-background.fade-out {
+  opacity: 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1000;
+  background: transparent;
+  transition: opacity 0.5s ease-out;
+}
+
+.overlay.fade-out {
+  opacity: 0;
+}
+
+.landing-content {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  padding: 40px 20px;
+  gap: 40px;
+  margin-top: 18vh;
+  margin-left: 12vw;
+}
+
+@media (min-width: 1400px) {
+  .landing-content {
+    margin-left: 15vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .landing-content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+  }
+}
+
+.game-title {
+  font-family: "Fredoka One", "Kalam", cursive;
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.game-title .silo {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.game-title .derples {
+  color: #ff6b35;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 15px rgba(255, 107, 53, 0.4);
+}
+
+#play-section {
+  flex-shrink: 0;
+  width: 450px;
+  max-width: 90vw;
+}
+
+.play-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 32px;
+  background: rgba(20, 20, 20, 0.92);
+  border: 3px solid #ff6b35;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(255, 107, 53, 0.2);
+}
+
+.play-hint {
+  font-family: "Kalam", cursive;
+  font-size: clamp(16px, 2vw, 20px);
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  text-align: center;
+}
+
+#play-btn {
+  font-family: "Kalam", cursive;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: bold;
+  padding: 20px 50px;
+  border-radius: 50px;
+  border: 4px solid #ff8c42;
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #ff8c42 50%,
+    #ffa366 100%
+  );
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s;
+  letter-spacing: 2px;
+}
+
+#play-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(
+    135deg,
+    #ff8c42 0%,
+    #ff6b35 50%,
+    #ff8c42 100%
+  );
+}
+
+#play-btn:active {
+  transform: scale(0.98);
+}
+
+#signin-section {
+  flex-shrink: 0;
+}
+
+.panel {
+  pointer-events: auto;
+  background: rgba(20, 20, 20, 0.92);
+  border: 3px solid #ff6b35;
+  border-radius: 16px;
+  padding: 32px;
+  width: 450px;
+  max-width: 90vw;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(255, 107, 53, 0.2);
+}
+
+.panel h1 {
+  font-family: "Fredoka One", cursive;
+  margin: 0 0 16px 0;
+  font-size: 32px;
+  text-align: center;
+  color: #ff6b35;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.panel p {
+  margin: 0 0 24px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ddd;
+  text-align: center;
+  font-family: "Kalam", cursive;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-direction: column;
+}
+
+button {
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: 2px solid #666;
+  background: #1e1e1e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-family: "Kalam", cursive;
+}
+
+button:hover {
+  background: #2e2e2e;
+  border-color: #888;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: #ff6b35;
+  border-color: #ff6b35;
+  color: #fff;
+}
+
+button.primary:hover:not(:disabled) {
+  background: #ff8c42;
+  border-color: #ff8c42;
+}
+
+input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid #666;
+  background: #101010;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Kalam", cursive;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff6b35;
+}
+
+.hide {
+  display: none !important;
+}
+
+#player-score {
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(255, 107, 53, 0.15);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Kalam", cursive;
+  color: #ffd700;
+}
+
+#leaderboard {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+#leaderboard h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Kalam", cursive;
+  color: #ff6b35;
+}
+
+#leaderboard ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+#leaderboard li {
+  margin: 8px 0;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+  font-family: "Kalam", cursive;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ====== DEFOLD GAME STYLES (Original Defold Structure) ====== */
+.canvas-app-container {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  display: none; /* Hidden initially, shown when game starts */
+  opacity: 0;
+  margin: auto;
+  transition: opacity 0.5s ease-in;
+}
+
+.canvas-app-container.game-active {
+  display: flex;
+  opacity: 1;
+}
+
+.canvas-app-container:-webkit-full-screen {
+  width: auto;
+  height: auto;
+}
+
+#canvas {
+  outline: none;
+  border: 0;
+  vertical-align: bottom;
+  width: 1280px;
+  height: 720px;
+  display: block;
+}
+
+#canvas-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+}
+
+canvas:focus,
+canvas:active {
+  outline: none;
+  border: 0;
+  -moz-outline-style: none;
+}
+
+body,
+div {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.canvas-app-progress {
+  position: absolute;
+  background-color: #d1dbeb;
+  height: 6px;
+  margin-top: -6px;
+  width: 100%;
+}
+
+.canvas-app-progress-bar {
+  font-size: 12px;
+  height: 6px;
+  color: rgb(255, 255, 255);
+  background-color: #1a72eb;
+  text-align: center;
+  line-height: 20px;
+  transition: transform 1s ease;
+  transform-origin: left;
+  transform: scaleX(1.0);
+}
+
+.buttons-background {
+  background-color: #ffffff;
+  width: 100%;
+  height: 42px;
+}
+
+.canvas-app-container {
+  background: rgba(250, 252, 255, 1);
+  background: -moz-linear-gradient(-45deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(250,252,255,1)), color-stop(50%, rgba(250,252,255,1)), color-stop(50%, rgba(245,249,255,1)), color-stop(100%, rgba(245,249,255,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+  background: linear-gradient(135deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafcff', endColorstr='#f5f9ff', GradientType=1 );
+	}
+
+.canvas-app-canvas {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("titlePage.png");
+}
+
+/* Notyf notification styling */
+.notyf {
+  font-family: "Kalam", cursive !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+}
+
+.notyf__toast {
+  background: rgba(20, 20, 20, 0.95) !important;
+  border: 2px solid #ff6b35 !important;
+  color: #fff !important;
+}
+
+.notyf__toast--success {
+  border-color: #4caf50 !important;
+}
+
+.notyf__toast--error {
+  border-color: #f44336 !important;
+}
+
+.notyf__toast--info {
+  border-color: #ff6b35 !important;
+}
+

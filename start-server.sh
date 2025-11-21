@@ -37,4 +37,3 @@ echo ""
 echo "Or use VS Code Live Server extension"
 exit 1
 
-

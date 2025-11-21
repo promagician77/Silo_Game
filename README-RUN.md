@@ -88,3 +88,4 @@ For production, deploy the entire `web-build` folder to any static hosting servi
 
 Make sure to serve over HTTPS for full PWA features!
 
+
